@@ -79,10 +79,10 @@ async function sendMessageToTelegram(text) {
   }
 }
 
-cron.schedule('*/1 * * * *', () => {
-  console.log('🔔 Đang lấy giá vàng lúc 9h sáng...');
-  getGoldPrice("09:00");
-});
+// cron.schedule('*/1 * * * *', () => {
+//   console.log('🔔 Đang lấy giá vàng lúc 9h sáng...');
+//   getGoldPrice("09:00");
+// });
 
 cron.schedule('0 9,14,17 * * *', () => {
   console.log('🔔 Đang lấy giá vàng theo lịch hẹn...');
