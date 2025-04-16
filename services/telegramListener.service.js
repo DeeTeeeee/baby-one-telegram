@@ -15,7 +15,7 @@ bot.on('polling_error', (error) => {
 
 bot.on('message', async (msg) => {
   const chatId = msg.chat.id;
-  // bot.sendMessage(chatId, '📥 Hello');
+  bot.sendMessage(chatId, '📥 Hello');
 
   // Nếu tag bot
   if (msg.document) {
