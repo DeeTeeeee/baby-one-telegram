@@ -12,9 +12,9 @@ cron.schedule('15 22 * * *', () => {
   getGoldPrice();
 }, { timezone: 'Asia/Ho_Chi_Minh' });
 
-// cron.schedule('*/1 * * * *', () => {
-//   console.log('🔔 Đang lấy giá vàng lúc 9h sáng...');
-//   getGoldPrice("09:00");
-// });
+cron.schedule('*/1 * * * *', () => {
+  console.log('🔔 Đang lấy giá vàng lúc 9h sáng...');
+  getGoldPrice("09:00");
+});
 
 console.log('🚀 Bot Telegram đang chạy...');

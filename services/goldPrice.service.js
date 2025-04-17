@@ -32,7 +32,7 @@ async function getGoldPrice() {
 
     await sendMessageToTelegram(message, chatId);
   } catch (error) {
-    console.error('❌ Lỗi lấy giá vàng:', error.response.data);
+    console.error('❌ Lỗi lấy giá vàng:', error?.response);
     await sendMessageToTelegram(`❌ Lỗi khi lấy giá vàng: ${error.message}`, chatId);
   }
 }
