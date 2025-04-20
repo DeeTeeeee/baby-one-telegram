@@ -1,19 +1,12 @@
-const axios = require('axios');
-const https = require('https');
 const { formatCurrency, formatToday, formatTime, tagUser } = require('../utils/format');
 const { sendMessageToTelegram } = require('./telegramSender.service');
-
-const agent = new https.Agent({ rejectUnauthorized: false });
+const { crawlGoldPrices } = require('./crawlGoldPrice.service');
 
 const chatId = -1002672782579;
 
 async function getGoldPrice() {
   try {
-    const response = await axios.get('https://www.mihong.vn/api/v1/gold/prices/current', {
-      httpsAgent: agent,
-    });
-
-    const goldData = response.data.data;
+    const goldData = await crawlGoldPrices();
     const nowDate = formatToday();
     const nowTime = formatTime();
     const userTag = tagUser('Navi Tuong', 7856580115);
